@@ -7,3 +7,6 @@ config.log
 config.status
 autoscan.log
 configure.scan
+stamp-h1
+.deps/
+
