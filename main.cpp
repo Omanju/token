@@ -4,15 +4,15 @@
 #include <cstdlib>
 #include <cctype>
 #include "Token.h"
+#include "TokenTypeTable.h"
 #include "KeyWord.h"
 
-void initCharType();
 Token nextToken();
 int nextChar();
 bool is_ope2(int c1, int c2);
 TokenType get_type(const std::string & s);
 
-TokenType ctype[256];
+TokenTypeTable tokens;
 Token token;
 std::ifstream fin;
 
@@ -44,7 +44,6 @@ int main(int argc, char * argv[])
     }
 
     std::cout << "text   kind intValue" << std::endl;
-    initCharType();
 
     for(token = nextToken(); token.type() != EofTkn; token = nextToken())
     {
@@ -74,7 +73,7 @@ Token nextToken()
         return Token(EofTkn, txt);
     }
 
-    switch(ctype[ch])
+    switch(tokens[ch])
     {
         case Letter:
             break;
@@ -94,6 +93,3 @@ int nextChar()
     return 0;
 }
 
-void initCharType()
-{
-}
