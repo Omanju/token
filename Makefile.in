@@ -50,7 +50,8 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
-am_interpreter_OBJECTS = main.$(OBJEXT) Token.$(OBJEXT)
+am_interpreter_OBJECTS = main.$(OBJEXT) Token.$(OBJEXT) \
+	TokenTypeTable.$(OBJEXT)
 interpreter_OBJECTS = $(am_interpreter_OBJECTS)
 interpreter_LDADD = $(LDADD)
 DEFAULT_INCLUDES = -I.@am__isrc@
@@ -170,7 +171,7 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-interpreter_SOURCES = main.cpp Token.cpp Token.h TokenType.h KeyWord.h
+interpreter_SOURCES = main.cpp Token.cpp Token.h TokenType.h KeyWord.h TokenTypeTable.cpp TokenTypeTable.h
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am
 
@@ -275,6 +276,7 @@ distclean-compile:
 	-rm -f *.tab.c
 
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Token.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/TokenTypeTable.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main.Po@am__quote@
 
 .cpp.o:
