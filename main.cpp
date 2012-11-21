@@ -77,6 +77,23 @@ Token nextToken()
     switch(ctype[ch])
     {
         case Letter:
+            break;
+        case String:
+            break;
+        case IntNum:
+            break;
+        case Digit:
+            break;
+        default:
+            break;
     }
-    
+}
+
+int nextChar()
+{
+    return 0;
+}
+
+void initCharType()
+{
 }
