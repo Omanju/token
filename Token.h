@@ -10,7 +10,7 @@ class Token
 {
 public:
     Token();
-    Token(TokenType type, const std::string & text, int intValue);
+    Token(TokenType type, const std::string & text, int intValue=0);
 
     // getters
     TokenType type()const;
